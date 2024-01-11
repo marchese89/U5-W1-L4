@@ -2,10 +2,8 @@ package com.epicode.U5D2.model;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -13,7 +11,6 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
 @Component
 @Entity
 @Table(name = "menus")
@@ -29,6 +26,7 @@ public class Menu {
 			joinColumns = @JoinColumn(name="menu_id"),
 			inverseJoinColumns = @JoinColumn(name="pizza_id")
 	)
+	@Autowired
 	private List<Pizza> pizzaList;
 	@ManyToMany
 	@JoinTable(
@@ -36,6 +34,7 @@ public class Menu {
 			joinColumns = @JoinColumn(name="menu_id"),
 			inverseJoinColumns = @JoinColumn(name="drink_id")
 	)
+	@Autowired
 	private List<Drink> drinkList;
 	@ManyToMany
 	@JoinTable(
@@ -43,6 +42,7 @@ public class Menu {
 			joinColumns = @JoinColumn(name="menu_id"),
 			inverseJoinColumns = @JoinColumn(name="topping_id")
 	)
+	@Autowired
 	private List<Topping> toppingList;
 
 	public void printMenu() {

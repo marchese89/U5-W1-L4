@@ -1,9 +1,6 @@
 package com.epicode.U5D2.model;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.util.List;
@@ -13,7 +10,12 @@ import java.util.List;
 @DiscriminatorValue("pizza")
 public class Pizza extends Item {
 	private String name;
-	@OneToMany
+	@ManyToMany
+	@JoinTable(
+			name="pizza_topping",
+			joinColumns = @JoinColumn(name="pizza_id"),
+			inverseJoinColumns = @JoinColumn(name="topping_id")
+	)
 	private List<Topping> toppingList;
 	private boolean isXl = false;
 

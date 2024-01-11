@@ -37,6 +37,7 @@ public class ItemService {
     }
 
     public Item create(Item item){
+        System.out.println("provo a creare un Item");
         return itemRepository.save(item);
     }
 

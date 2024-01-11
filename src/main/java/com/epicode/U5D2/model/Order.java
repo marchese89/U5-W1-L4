@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 @Getter
 @Setter
+@Entity
 @jakarta.persistence.Table(name = "orders")
 public class Order {
 

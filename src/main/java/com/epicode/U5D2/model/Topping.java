@@ -1,8 +1,6 @@
 package com.epicode.U5D2.model;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,6 +20,9 @@ public class Topping extends Item {
 
 	@ManyToMany(mappedBy = "toppingList")
 	List<Menu> menuList;
+
+	@ManyToMany(mappedBy = "toppingList")
+	private List<Pizza> pizzasList;
 
 	@Override
 	public String toString() {

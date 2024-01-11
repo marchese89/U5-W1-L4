@@ -12,12 +12,12 @@ import java.util.List;
 
 @Repository
 public interface ItemRepository extends JpaRepository<Item,Long> {
-    @Query("SELECT i FROM Item i WHERE i.item_type = 'pizza'")
+    @Query("SELECT p FROM Pizza p ")
     List<Pizza> getAllPizzas();
 
-    @Query("SELECT i FROM Item i WHERE i.item_type = 'drink'")
+    @Query("SELECT d FROM Drink d")
     List<Drink> getAllDrinks();
 
-    @Query("SELECT i FROM Item i WHERE i.item_type = 'topping'")
+    @Query("SELECT t FROM Topping t")
     List<Topping> getAllToppings();
 }
