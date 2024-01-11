@@ -6,8 +6,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Entity
 @jakarta.persistence.Table(name = "tables")
@@ -16,10 +18,13 @@ public class Table {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
+	@NonNull
 	private int numTable;
+	@NonNull
 	private int numMaxCoperti;
+	@NonNull
 	private boolean isFree;
+	@NonNull
 	private double costoCoperto;
 
 	public void print() {

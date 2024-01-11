@@ -1,11 +1,15 @@
 package com.epicode.U5D2.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+@Getter
+@Setter
 @jakarta.persistence.Table(name = "orders")
 public class Order {
 
@@ -17,6 +21,7 @@ public class Order {
 	private State state;
 	private int numCoperti;
 	private LocalTime oraAcquisizione;
+	@OneToMany
 	private List<Item> orderedProducts;
 	@ManyToOne
 	@JoinColumn(name = "table_id")

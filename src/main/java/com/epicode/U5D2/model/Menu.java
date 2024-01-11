@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Getter
+@Setter
 @ToString
 @AllArgsConstructor
 @Component

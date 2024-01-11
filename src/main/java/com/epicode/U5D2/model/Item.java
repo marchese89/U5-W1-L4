@@ -3,10 +3,13 @@ package com.epicode.U5D2.model;
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="item_type")
 @Table(name = "menu_items")
 public abstract class Item {
 	@Id
