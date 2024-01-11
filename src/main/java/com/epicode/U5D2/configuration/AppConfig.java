@@ -1,5 +1,9 @@
-package com.epicode.U5D2.entities;
+package com.epicode.U5D2.configuration;
 
+import com.epicode.U5D2.model.Drink;
+import com.epicode.U5D2.model.Pizza;
+import com.epicode.U5D2.model.Table;
+import com.epicode.U5D2.model.Topping;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

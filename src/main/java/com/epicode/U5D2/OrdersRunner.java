@@ -1,6 +1,6 @@
 package com.epicode.U5D2;
 
-import com.epicode.U5D2.entities.*;
+import com.epicode.U5D2.model.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Profile;

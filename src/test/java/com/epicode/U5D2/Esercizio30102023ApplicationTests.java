@@ -1,6 +1,6 @@
 package com.epicode.U5D2;
 
-import com.epicode.U5D2.entities.*;
+import com.epicode.U5D2.model.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,16 +1,25 @@
-package com.epicode.U5D2.entities;
+package com.epicode.U5D2.model;
+
+import jakarta.persistence.*;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+@jakarta.persistence.Table(name = "orders")
 public class Order {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 	private int numeroOrdine;
+	@Enumerated(EnumType.STRING)
 	private State state;
 	private int numCoperti;
 	private LocalTime oraAcquisizione;
 	private List<Item> orderedProducts;
+	@ManyToOne
+	@JoinColumn(name = "table_id")
 	private Table table;
 
 	public Order(int numCoperti, Table table) {
